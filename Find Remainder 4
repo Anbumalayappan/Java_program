@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int dividend=s.nextInt();
+        int divisor=s.nextInt();
+        if(divisor==0){
+            System.out.println("0");
+        }
+        else{
+            int remainder = dividend % divisor;
+            System.out.println(remainder);
+        }
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
