@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+
+interface Appliance {
+    void power();
+}
+class Email implements Appliance {
+    public void power() {
+        System.out.println("Email notification sent");
+    }
+}
+class SMS implements Appliance {
+    public void power() {
+        System.out.println("SMS notification sent");
+    }
+}
+class Push implements Appliance {
+    public void power() {
+        System.out.println("SMS notification sent");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String method = sc.nextLine();
+        Appliance type = null;
+        if (method.equals("Email")) {
+            type = new Email();
+        } else if (method.equals("SMS")) {
+            type = new SMS();
+        } 
+        else if (method.equals("Push")) {
+            type = new Push();
+        } 
+        if (type != null) {
+            type.power();
+        }
+    }
+}
