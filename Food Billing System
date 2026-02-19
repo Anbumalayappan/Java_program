@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+interface Appliance {
+    void power(int h);
+}
+class Pizza implements Appliance {
+    public void power(int h) {
+        System.out.println(h*200+" rupees");
+    }
+}
+class Burger implements Appliance {
+    public void power(int h) {
+        System.out.println(h*100+" rupees");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String method = sc.nextLine();
+        int h = sc.nextInt();
+        Appliance type = null;
+        if (method.equals("Pizza")) {
+            type = new Pizza();
+        } else if (method.equals("Burger")) {
+            type = new Burger();
+        } 
+        if (type != null) {
+            type.power(h);
+        }
+    }
+}
